@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('peso', 8, 2)->nullable();
             $table->decimal('altezza', 8, 2)->nullable();
             $table->string('url_img')->nullable();
-            $table->text('Info')->nullable();
+            $table->text('info')->nullable();
             $table->timestamps();
         });
     }

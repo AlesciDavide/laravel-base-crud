@@ -4,16 +4,17 @@ namespace Database\Seeders;
 use App\Models\Animal;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Generator as faker;
 
 class AnimalSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
         $animalData = $this->getCsv(__DIR__ . '/../../resources/assets/animali.csv');
-        /* var_dump($animalData); */
+        var_dump($animalData);
 
         foreach ($animalData as $singleAnimal) {
             $newAnimal = new Animal();
@@ -25,7 +26,7 @@ class AnimalSeeder extends Seeder
             $newAnimal->colore = $singleAnimal[5];
             $newAnimal->peso = $singleAnimal[6];
             $newAnimal->altezza = $singleAnimal[7];
-            $newAnimal->url_img = $singleAnimal[8];
+            $newAnimal->url_img = $faker->imageUrl(640, 480, 'animals', true);
             $newAnimal->info = $singleAnimal[9];
             $newAnimal->save();
         }
