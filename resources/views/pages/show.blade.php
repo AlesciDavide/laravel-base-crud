@@ -3,9 +3,9 @@
 
     @section('main-content')
 
-    @foreach ($animals as $animal)
-            {{ $animal->nome }}
 
-    @endforeach
+
+            {{ $animal->nome }}aaaaaaaa
+
 
     @endsection

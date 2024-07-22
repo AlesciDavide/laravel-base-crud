@@ -15,6 +15,7 @@ use App\Http\Controllers\AnimalController;
 */
 
 Route::get('/', [AnimalController::Class, 'index'])->name('pages.index');
+Route::get('/show/{animal}', [AnimalController::Class, 'show'])->name('pages.show');
 
 
 
