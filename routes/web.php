@@ -20,4 +20,4 @@ Route::get('/show/{animal}', [AnimalController::Class, 'show'])->name('pages.sho
 
 
 
-/* Route::resource('Animal', AnimalController::class); */
+
