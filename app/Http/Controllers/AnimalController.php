@@ -22,7 +22,7 @@ class AnimalController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.create');
     }
 
     /**
@@ -30,7 +30,28 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = $request->except('_token');
+
+        $newAnimal = new Animal($data);
+
+        /* dd($newAnimal); */
+
+        /*  $newAnimal = new Animal($data);
+        $newAnimal->nome = $data['nome'];
+        $newAnimal->specie = $data['specie'];
+        $newAnimal->razza = $data['razza'];
+        $newAnimal->eta = $data['eta'];
+        $newAnimal->sesso = $data['sesso'];
+        $newAnimal->colore = $data['colore'];
+        $newAnimal->peso = $data['peso'];
+        $newAnimal->altezza = $data['altezza'];
+        $newAnimal->url_img = $data['url_img'];
+        $newAnimal->info = $data['info']; */
+
+        $newAnimal->save();
+        return redirect()->route('pages.show', ['animal' => $newAnimal->id]);
+
     }
 
     /**

@@ -6,9 +6,9 @@
 
 
             <div class="col-12 m-2 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 40vw">
 
-                    <img src="{{ $animal->url_img }}" class="card-img-top" alt="fake img">
+                    <img src="{{ $animal->url_img }}" class="card-img-top rounded-4" alt="fake img" >
 
                     <div class="card-body">
                         <h5 class="card-title">Specie: {{ $animal->specie }}</h5>
