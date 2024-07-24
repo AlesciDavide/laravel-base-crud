@@ -68,7 +68,7 @@ class AnimalController extends Controller
      */
     public function edit(Animal $animal)
     {
-        //
+        return view('pages.edit', compact('animal'));
     }
 
     /**
@@ -76,7 +76,27 @@ class AnimalController extends Controller
      */
     public function update(Request $request, Animal $animal)
     {
-        //
+        $data = $request->except('_token');
+
+
+
+        /* dd($data); */
+/*
+        $newAnimal = new Animal($data);
+        $newAnimal->nome = $data['nome'];
+        $newAnimal->specie = $data['specie'];
+        $newAnimal->razza = $data['razza'];
+        $newAnimal->eta = $data['eta'];
+        $newAnimal->sesso = $data['sesso'];
+        $newAnimal->colore = $data['colore'];
+        $newAnimal->peso = $data['peso'];
+        $newAnimal->altezza = $data['altezza'];
+        $newAnimal->url_img = $data['url_img'];
+        $newAnimal->info = $data['info'];
+        $animal->update(); */
+
+        $animal->update($data);
+        return redirect()->route('pages.show', ['animal' => $animal->id]);
     }
 
     /**

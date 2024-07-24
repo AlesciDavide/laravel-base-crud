@@ -5,7 +5,7 @@
     <section class="container my_container">
         <article class="row d-flex justify-content-center">
         @foreach ($animals as $animal)
-            <div class="col-12 col-sm-5 col-lg-3 col m-4 d-flex justify-content-center">
+            <div class="col-12 col-sm-5 col-lg-3  m-4 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
 
                     <img src="{{ $animal->url_img }}" class="card-img-top" alt="fake img">
@@ -23,8 +23,9 @@
                         <li class="list-group-item">Peso: {{ $animal->peso}} kg.</li>
                         <li class="list-group-item">Altezza: {{ $animal->altezza}} cm.</li>
                     </ul>
-                    <div class="card-body">
-                        <a href="{{ route('pages.show', ['animal' => $animal->id]) }}" class="card-link d-flex justify-content-center">Dettagli</a>
+                    <div class="card-body d-flex justify-content-evenly">
+                        <a href="{{ route('pages.show', ['animal' => $animal->id]) }}" class="btn btn-primary d-flex justify-content-center">Dettagli</a>
+                        <a href="{{ route('pages.show', ['animal' => $animal->id]) }}" class="btn btn-success d-flex justify-content-center">Modifica</a>
                     </div>
                 </div>
             </div>

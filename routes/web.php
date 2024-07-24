@@ -17,7 +17,9 @@ use App\Http\Controllers\AnimalController;
 Route::get('/', [AnimalController::Class, 'index'])->name('pages.index');
 Route::post('/', [AnimalController::Class, 'store'])->name('pages.store');
 Route::get('/create', [AnimalController::Class, 'create'])->name('pages.create');
+Route::get('/show/{animal}/edit', [AnimalController::Class, 'edit'])->name('pages.edit');
 Route::get('/show/{animal}', [AnimalController::Class, 'show'])->name('pages.show');
+Route::put('/show/{animal}', [AnimalController::Class, 'update'])->name('pages.update');
 
 
 
