@@ -4,15 +4,18 @@
     @section('main-content')
 
     <div class="col-12 mt-2 d-flex justify-content-center">
-
+        <div style="width: 40vw">
         @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}
-
+        @elseif (session('message_nuovo_animale'))
+        <div class="alert alert-success">
+            {{ session('message_nuovo_animale') }}
         </div>
         @endif
     </div>
-
+</div>
+</div>
             <div class="col-12 m-2 d-flex justify-content-center">
                 <div class="card" style="width: 40vw">
 

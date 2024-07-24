@@ -50,7 +50,7 @@ class AnimalController extends Controller
         $newAnimal->info = $data['info']; */
 
         $newAnimal->save();
-        return redirect()->route('pages.show', ['animal' => $newAnimal->id]);
+        return redirect()->route('pages.show', ['animal' => $newAnimal->id])->with('message_nuovo_animale', $animal->nome . " è stato Creato con successo!!");
 
     }
 
@@ -96,7 +96,7 @@ class AnimalController extends Controller
         $animal->update(); */
 
         $animal->update($data);
-        return redirect()->route('pages.show', ['animal' => $animal->id])->with('message', $animal->name . "è stato modificato con successo!!");
+        return redirect()->route('pages.show', ['animal' => $animal->id])->with('message', $animal->nome . " è stato modificato con successo!!");
     }
 
     /**
@@ -104,6 +104,7 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        $animal->delete();
+        return redirect()->route('pages.index')->with('message_delete', $animal->nome . " è stato cancellato con successo!!");
     }
 }

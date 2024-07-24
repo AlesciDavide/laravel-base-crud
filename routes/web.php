@@ -20,8 +20,6 @@ Route::get('/create', [AnimalController::Class, 'create'])->name('pages.create')
 Route::get('/show/{animal}/edit', [AnimalController::Class, 'edit'])->name('pages.edit');
 Route::get('/show/{animal}', [AnimalController::Class, 'show'])->name('pages.show');
 Route::put('/show/{animal}', [AnimalController::Class, 'update'])->name('pages.update');
+Route::delete('/show/{animal}', [AnimalController::Class, 'destroy'])->name('pages.destroy');
 
-
-
-
-
+/* Route::resource('/', AnimalController::class); */
