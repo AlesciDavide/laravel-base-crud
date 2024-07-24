@@ -96,7 +96,7 @@ class AnimalController extends Controller
         $animal->update(); */
 
         $animal->update($data);
-        return redirect()->route('pages.show', ['animal' => $animal->id]);
+        return redirect()->route('pages.show', ['animal' => $animal->id])->with('message', $animal->name . "è stato modificato con successo!!");
     }
 
     /**

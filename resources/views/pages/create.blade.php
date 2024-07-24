@@ -3,7 +3,7 @@
 
 @section('main-content')
 <strong class="d-flex justify-content-center fs-1">Crea un nuovo animale!!</strong>
-<form action="{{ route('pages.store') }}" method="POST">
+<form action="{{ route('pages.store') }}" method="POST" id="creation_form">
     @csrf
 
     <div class="input-group-sm container mb-5 w-50">
@@ -49,5 +49,9 @@
 </form>
 <a href="{{route('pages.index')}}" class="card-link d-flex justify-content-center">Torna alla lista animali</a>
 
+    @endsection
+
+    @section('custom-scripts')
+    @vite('resources/js/alert_confirm.js')
     @endsection
 

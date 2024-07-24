@@ -3,7 +3,7 @@
 
 @section('main-content')
 <strong class="d-flex justify-content-center fs-1">Modifica {{ $animal->nome }}</strong>
-<form action="{{ route('pages.update', ['animal' => $animal->id]) }}" method="POST">
+<form action="{{ route('pages.update', ['animal' => $animal->id]) }}" method="POST" id="creation_form">
     @method("PUT")
     @csrf
     <div class="input-group-sm container mb-5 w-50">
@@ -55,3 +55,6 @@
 
     @endsection
 
+    @section('custom-scripts')
+    @vite('resources/js/alert_confirm.js')
+    @endsection

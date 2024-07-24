@@ -3,7 +3,15 @@
 
     @section('main-content')
 
+    <div class="col-12 mt-2 d-flex justify-content-center">
 
+        @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+
+        </div>
+        @endif
+    </div>
 
             <div class="col-12 m-2 d-flex justify-content-center">
                 <div class="card" style="width: 40vw">
