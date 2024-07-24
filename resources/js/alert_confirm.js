@@ -1,4 +1,4 @@
-document.getElementById('creation_form').addEventListener('submit', function(){
+document.getElementById('creation_form').addEventListener('submit', function( event ){
     event.preventDefault();
 
 
