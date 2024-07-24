@@ -23,9 +23,9 @@
                         <li class="list-group-item">Peso: {{ $animal->peso}} kg.</li>
                         <li class="list-group-item">Altezza: {{ $animal->altezza}} cm.</li>
                     </ul>
-                    <div class="card-body d-flex justify-content-evenly">
+                    <div class="card-body d-flex justify-content-evenly align-center align-items-center">
                         <a href="{{ route('pages.show', ['animal' => $animal->id]) }}" class="btn btn-primary d-flex justify-content-center">Dettagli</a>
-                        <a href="{{ route('pages.show', ['animal' => $animal->id]) }}" class="btn btn-success d-flex justify-content-center">Modifica</a>
+                        <a href="{{ route('pages.edit', ['animal' => $animal->id]) }}" class="btn btn-success d-flex justify-content-center">Modifica</a>
                     </div>
                 </div>
             </div>

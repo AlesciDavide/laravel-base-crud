@@ -23,9 +23,9 @@
                         <li class="list-group-item">Peso: {{ $animal->peso}} kg.</li>
                         <li class="list-group-item">Altezza: {{ $animal->altezza}} cm.</li>
                     </ul>
-                    <div class="card-body">
+                    <div class="card-body d-flex justify-content-center align-items-center">
 
-                        <a href="{{route('pages.index')}}" class="card-link d-flex justify-content-center">Torna alla lista animali</a>
+                        <a href="{{route('pages.index')}}" class="btn btn-primary card-link w-30">Torna alla lista animali</a>
                     </div>
                 </div>
             </div>

@@ -37,17 +37,21 @@
         <input type="url" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="URL dell'immagine dell'animale" id="url_img" name="url_img" value="{{ $animal->url_img }}">
 
         <label for="info">Informazioni</label>
-        <input class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="info" name="info" value="{{ $animal->info }}">
+        <input class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="info" name="info" value="{{ $animal->info }}">
 
-        <div class="d-flex justify-content-between mt-3">
+        <div class="d-flex justify-content-between mb-5">
 
                 <input class="btn btn-primary" type="submit" value="Modifica {{ $animal->nome}}">
                 <input class="btn btn-warning" type="reset" value="resetta campi">
 
         </div>
+        <div class="d-flex align-items-center justify-content-center">
+
+            <a href="{{route('pages.index')}}" class="btn btn-primary card-link w-30">Torna alla lista animali</a>
+        </div>
     </div>
 </form>
-<a href="{{route('pages.index')}}" class="card-link d-flex justify-content-center">Torna alla lista animali</a>
+
 
     @endsection
 
