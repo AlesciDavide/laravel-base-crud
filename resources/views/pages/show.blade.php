@@ -38,8 +38,17 @@
 
                         <a href="{{route('pages.index')}}" class="btn btn-primary card-link w-30">Torna alla lista animali</a>
                         <a href="{{ route('pages.edit', ['animal' => $animal->id]) }}" class="btn btn-success d-flex">Modifica</a>
+                        <form action="{{ route('pages.destroy', ['animal' => $animal->id]) }}" method="POST" class="d-inline-block" id="creation_form">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-warning">Elimina</button>
+                        </form>
                     </div>
                 </div>
             </div>
 
+    @endsection
+
+    @section('custom-scripts')
+    @vite('resources/js/alert_confirm.js')
     @endsection
