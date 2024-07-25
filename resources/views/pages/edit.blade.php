@@ -23,34 +23,32 @@
         <label for="nome">Nome</label>
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="nome" name="nome" value="{{ old('nome', $animal->nome) }}">
 
-
         <label for="specie">specie</label>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="specie dell'animale" id="specie" name="specie" value="{{  old('nome',$animal->specie) }}">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="specie dell'animale" id="specie" name="specie" value="{{  old('specie',$animal->specie) }}">
 
         <label for="razza">Razza</label>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Razza dell'animale" id="razza" name="razza" value="{{  old('nome',$animal->razza) }}">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Razza dell'animale" id="razza" name="razza" value="{{  old('razza',$animal->razza) }}">
 
         <label for="eta">Età</label>
-        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Età dell'animale" id="eta" name="eta" value="{{  old('nome',$animal->eta) }}">
+        <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Età dell'animale" id="eta" name="eta" value="{{  old('eta',$animal->eta) }}">
 
         <label for="sesso">Sesso</label>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Sesso dell'animale" id="sesso" name="sesso" value="{{  old('nome',$animal->sesso) }}">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Sesso dell'animale" id="sesso" name="sesso" value="{{  old('sesso',$animal->sesso) }}">
 
         <label for="colore">Colore</label>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Colore dell'animale" id="colore" name="colore" value="{{  old('nome',$animal->colore) }}">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Colore dell'animale" id="colore" name="colore" value="{{  old('colore',$animal->colore) }}">
 
         <label for="peso">Peso</label>
-        <input type="number" step="0.01" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Peso dell'animale in kg" id="peso" name="peso" value="{{  old('nome',$animal->peso) }}">
+        <input type="number" step="0.01" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Peso dell'animale in kg" id="peso" name="peso" value="{{  old('peso',$animal->peso) }}">
 
         <label for="altezza">Altezza</label>
-        <input type="number" step="0.01" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Altezza dell'animale in cm" id="altezza" name="altezza" value="{{  old('nome',$animal->altezza) }}">
+        <input type="number" step="0.01" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Altezza dell'animale in cm" id="altezza" name="altezza" value="{{  old('altezza',$animal->altezza) }}">
 
         <label for="url_img">URL Immagine</label>
-        <input type="url" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="URL dell'immagine dell'animale" id="url_img" name="url_img" value="{{  old('nome',$animal->url_img) }}">
+        <input type="url" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="URL dell'immagine dell'animale" id="url_img" name="url_img" value="{{  old('url_img',$animal->url_img) }}">
 
         <label for="info">Informazioni</label>
-        <input class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="info" name="info" value="{{  old('nome',$animal->info) }}">
-
+        <input class="form-control mb-3" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="info" name="info" value="{{  old('info',$animal->info) }}">
         <div class="d-flex justify-content-between mb-5">
 
                 <input class="btn btn-primary" type="submit" value="Modifica {{  $animal->nome }}">
