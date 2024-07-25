@@ -7,10 +7,6 @@
         <div class="alert alert-success">
             {{ session('message_delete') }}
         </div>
-        @elseif (session('message_restore'))
-        <div class="alert alert-success">
-            {{ session('message_restore') }}
-        </div>
         @endif
         <article class="row d-flex justify-content-center">
         @foreach ($animals as $animal)
@@ -33,12 +29,15 @@
                         <li class="list-group-item">Altezza: {{ $animal->altezza}} cm.</li>
                     </ul>
                     <div class="card-body d-flex justify-content-evenly align-center align-items-center">
-                        <a href="{{ route('pages.show', ['animal' => $animal->id]) }}" class="btn btn-primary d-flex justify-content-center">Dettagli</a>
-                        <a href="{{ route('pages.edit', ['animal' => $animal->id]) }}" class="btn btn-success d-flex justify-content-center">Modifica</a>
-                        <form action="{{ route('pages.destroy', ['animal' => $animal->id]) }}" method="POST" class="d-inline-block delete_form" data_animal_id="{{ $animal->id }}" data_animal_nome="{{ $animal->nome }}">
+                        <form action="{{ route('pages.restore', ['animal' => $animal->id]) }}" method="POST" class="d-inline-block" data_animal_id="{{ $animal->id }}" data_animal_nome="{{ $animal->nome }}">
+                            @method('PATCH')
+                            @csrf
+                            <button type="submit" class="btn btn-secondary">Ripristina</button>
+                        </form>
+                        <form action="{{ route('pages.permanent_delete', ['animal' => $animal->id]) }}" method="POST" class="d-inline-block delete_form" data_animal_id="{{ $animal->id }}" data_animal_nome="{{ $animal->nome }}">
                             @method('DELETE')
                             @csrf
-                            <button type="submit" class="btn btn-warning">Elimina</button>
+                            <button type="submit" class="btn btn-danger">Elimina</button>
                         </form>
                     </div>
                 </div>

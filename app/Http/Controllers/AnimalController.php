@@ -83,4 +83,29 @@ class AnimalController extends Controller
         $animal->delete();
         return redirect()->route('pages.index')->with('message_delete', $animal->nome . " è stato cancellato con successo!!");
     }
+
+    /* pagina con gli animali nel cestino */
+    public function deletedIndex()
+    {
+        $animals = Animal::onlyTrashed()->get();
+
+        return view('pages.deleteindex', compact('animals'));
+    }
+
+    /* ripristinare elementi dal cestino */
+    public function restore(string $id)
+    {
+        $animal = Animal::onlyTrashed()->findOrFail($id);
+        $animal->restore();
+
+        return redirect()->route('pages.index')->with('message_restore', $animal->nome . " è stato ripristinato con successo!!");
+    }
+
+    /* cancellare definitivamente un'elemento */
+    public function delete(string $id)
+    {
+        $animal = Animal::onlyTrashed()->findOrFail($id);
+        $animal->forceDelete();
+        return redirect()->route('pages.deleted.index')->with('message_delete', $animal->nome . " è stato cancellato permanentemente con successo!!");
+    }
 }

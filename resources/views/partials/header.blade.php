@@ -10,6 +10,11 @@
                 <li class="nav-item">
                     <a class="nav-link active mx-5" aria-current="page" href="{{ route('pages.create')}}">Crea nuovo animale</a>
                 </li>
+                <li>
+                    <a class="nav-link active mx-5" href="{{ route('pages.deleted.index')}}"  aria-current="page">
+                        Animali nel cestino
+                    </a>
+                </li>
                 </ul>
             </div>
             </div>
