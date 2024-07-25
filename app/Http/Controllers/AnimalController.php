@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StoreAnimalRequest;
+use Illuminate\Http\Requests;
 
 use App\Models\Animal;
-use Illuminate\Http\Request;
 
 class AnimalController extends Controller
 {
@@ -28,26 +29,13 @@ class AnimalController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAnimalRequest $request)
     {
-
         $data = $request->except('_token');
+        $data = $request->validated();
 
         $newAnimal = new Animal($data);
 
-        /* dd($newAnimal); */
-
-        /*  $newAnimal = new Animal($data);
-        $newAnimal->nome = $data['nome'];
-        $newAnimal->specie = $data['specie'];
-        $newAnimal->razza = $data['razza'];
-        $newAnimal->eta = $data['eta'];
-        $newAnimal->sesso = $data['sesso'];
-        $newAnimal->colore = $data['colore'];
-        $newAnimal->peso = $data['peso'];
-        $newAnimal->altezza = $data['altezza'];
-        $newAnimal->url_img = $data['url_img'];
-        $newAnimal->info = $data['info']; */
 
         $newAnimal->save();
         return redirect()->route('pages.show', ['animal' => $newAnimal->id])->with('message_nuovo_animale', $newAnimal->nome . " è stato Creato con successo!!");
@@ -105,6 +93,7 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
+
         $animal->delete();
         return redirect()->route('pages.index')->with('message_delete', $animal->nome . " è stato cancellato con successo!!");
     }

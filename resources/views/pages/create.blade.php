@@ -3,6 +3,18 @@
 
 @section('main-content')
 <strong class="d-flex justify-content-center fs-1">Crea un nuovo animale!!</strong>
+<div class="d-flex justify-content-center align-item-center">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+</div>
 <form action="{{ route('pages.store') }}" method="POST" id="creation_form">
     @csrf
 
